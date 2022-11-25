@@ -13,7 +13,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:http/http.dart' as http;
 
 class ViewBillPage extends StatefulWidget {
-  final String title = "View Bills";
+  final String title = "View Billss";
   const ViewBillPage({Key? key}) : super(key: key);
 
   @override
