@@ -43,6 +43,7 @@ dependencies:
   pinch_zoom: ^1.0.0
   flutter_pdfview: ^1.2.2
   permission_handler: ^9.0.2
+ 
 
 dev_dependencies:
   flutter_test:
