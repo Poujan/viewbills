@@ -78,7 +78,7 @@ class _ViewBillPageState extends State<ViewBillPage> {
   _initDir() async {
     // ignore: unnecessary_null_comparison
     if (_dir == null) {
-      _dir = (await getApplicationDocumentsDirectory()).path;
+      _dir = (await getApplicationSupportDirectory()).path;
       print("init $_dir");
     }
   }
@@ -130,7 +130,8 @@ class _ViewBillPageState extends State<ViewBillPage> {
   _initDirStorage() async {
     // ignore: unnecessary_null_comparison
     if (_dirStorage == null) {
-      _dirStorage = (await DownloadsPathProvider.downloadsDirectory)!.path;
+      // _dirStorage = (await DownloadsPathProvider.downloadsDirectory)!.path;
+      _dirStorage = (await getApplicationDocumentsDirectory()).path;
       print("initStorage $_dirStorage");
     }
   }
