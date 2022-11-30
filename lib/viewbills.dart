@@ -95,6 +95,13 @@ class _ViewBillPageState extends State<ViewBillPage> {
     return file.writeAsBytes(req.bodyBytes);
   }
 
+  Future<File> _downloadFile2(String url, String fileName) async {
+    var req = await http.Client().get(Uri.parse(url));
+    var file = File('$_dir/$fileName');
+    print("file.path ${file.path}");
+    return file.writeAsBytes(req.bodyBytes);
+  }
+
   unarchiveAndSave(var zippedFile) async {
     var bytes = zippedFile.readAsBytesSync();
     var archive = ZipDecoder().decodeBytes(bytes);
@@ -158,7 +165,7 @@ class _ViewBillPageState extends State<ViewBillPage> {
     });
     _pdf?.clear();
     _tempPDF?.clear();
-    var zipfile1 = await _downloadFile(_zipPath, _localZipFileName);
+    var zipfile1 = await _downloadFile2(_zipPath, _localZipFileName);
     await unzipandsave(zipfile1);
 
     setState(() {
